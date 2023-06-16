@@ -1,5 +1,11 @@
 # GCP Cloud Function
 
+This is a simple repository showing how to obtain currency rates from different countries.
+Implement a cloud function on GCP is not that hard, but you will need pacience to deal with erros related to service account 
+permissions and in your code.
+
+Debbug is an important part when it comes to create a cloud function.
+
 ---
 
 Requirements:
