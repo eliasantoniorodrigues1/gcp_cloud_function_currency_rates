@@ -15,8 +15,8 @@ os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = os.path.join(
     BASE_DIR, 'serasa_google.json')
 
 # data configuration
-project_id = 'ga360-localiza'
-table_name = 'crm_analytics.moedas_historico_cotacoes'
+project_id = 'your-project-id'
+table_name = 'your-dataset.moedas_historico_cotacoes'
 
 # ==============================================================================
 # autentication
@@ -116,12 +116,12 @@ def insert_gcp(df: pd.DataFrame, project_id: str, table: str, method='append'):
 def remove_duplicates():
     query = f'''
     -- remove os duplicados da tabela
-    CREATE OR REPLACE TABLE `ga360-localiza.crm_analytics.moedas_historico_cotacoes` AS
+    CREATE OR REPLACE TABLE `your-project.your-dataset.moedas_historico_cotacoes` AS
     SELECT 
         DISTINCT 
         * 
     FROM 
-        `ga360-localiza.crm_analytics.moedas_historico_cotacoes`
+        `your-project.your-dataset.moedas_historico_cotacoes`
     '''
     query_job = client.query(query)
     results = query_job.result()
